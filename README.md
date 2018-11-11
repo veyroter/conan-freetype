@@ -8,7 +8,7 @@
 
 ## Installation hint
 
-`conan remote add ckristen https://api.bintray.com/conan/ckristen/conan`
+`conan remote add ckristen https://api.bintray.com/conan/ckristen/conan`  
 add dependency: `freetype/2.9.1@ckristen/testing`
 
 ## Upload hint
