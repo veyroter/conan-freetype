@@ -7,13 +7,13 @@ import os
 
 class FreetypeConan(ConanFile):
     name = "freetype"
-    version = "2.9.0"
+    version = "2.9.1"
     description = "FreeType is a freely available software library to render fonts."
-    url = "http://github.com/bincrafters/conan-freetype"
+    url = "http://github.com/veyroter/conan-freetype"
     homepage = "https://www.freetype.org"
     license = "BSD"
-    author = "Bincrafters <bincrafters@gmail.com>"
-    exports = ["LICENSE.md", "FindFreetype.cmake"]
+    author = "Bincrafters <bincrafters@gmail.com> and Vadim Chuprakov <mnz-rrh@ya.ru>"
+    exports = ["FindFreetype.cmake"]
     exports_sources = ["CMakeLists.txt", "freetype.pc.in"]
     generators = "cmake"
     settings = "os", "arch", "compiler", "build_type"
@@ -85,6 +85,7 @@ class FreetypeConan(ConanFile):
         cmake.definitions["PROJECT_VERSION"] = self.version
         cmake.definitions["WITH_ZLIB"] = self.options.with_zlib
         cmake.definitions["WITH_PNG"] = self.options.with_png
+        cmake.definitions["WITH_HarfBuzz"] = False
         cmake.configure(build_dir=self._build_subfolder)
         return cmake
 
