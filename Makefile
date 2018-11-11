@@ -1,3 +1,3 @@
 
 test:
-	conan create . freetype/testing
+	conan create . ckristen/testing
